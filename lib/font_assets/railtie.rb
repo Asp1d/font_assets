@@ -9,8 +9,6 @@ module FontAssets
       config.font_assets.options ||= { allow_ssl: true }
 
       insert_target = if defined?(ActionDispatch::Static)
-        'ActionDispatch::Static'
-      else
         'Rack::Runtime'
       end
 
