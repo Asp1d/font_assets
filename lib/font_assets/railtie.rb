@@ -1,4 +1,4 @@
-require 'font_assets/middleware'
+require "font_assets/middleware"
 
 module FontAssets
   class Railtie < Rails::Railtie
@@ -10,7 +10,11 @@ module FontAssets
 
       insert_target = 'Rack::Runtime'
 
-      app.middleware.insert_before insert_target, FontAssets::Middleware, config.font_assets.origin, config.font_assets.options
+      app.middleware.insert_before insert_target,
+                                   FontAssets::Middleware,
+                                   config.font_assets.origin,
+                                   config.font_assets.options
+
     end
   end
 end
